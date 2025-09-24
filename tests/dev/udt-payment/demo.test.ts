@@ -13,7 +13,7 @@ describe('demo', () => {
         await addUdtCell({ ckbCapacity: 100000000000n })
         
         // init 
-        await faucetUSDI((await Signers[0].getAddressObjs())[0].script,4000000n);
+        await faucetUSDI((await Signers[0].getAddressObjs())[0].script,40000000n);
         // let b = await balanceUSDI(Signers[0],USDI);
         // console.log("Signers[0] balance:",b);
         const { res: tx } = await USDI.transfer(
