@@ -82,9 +82,7 @@ describe('initiate', () => {
         );
         let completedTx = await USDI.completeBy(tx, FUND_POOL_SIGNERS);
         await showTxMessage(FUND_POOL_SIGNERS.client, completedTx);
-        let { transaction } = await udtClient.initiate(completedTx, [2]);
-        await showTxMessage(FUND_POOL_SIGNERS.client, transaction);
-        await expect(udtClient.initiate(transaction, [2])).rejects.toThrow(/Input cells uses invalid lock script!/)
+        await expect(udtClient.initiate(completedTx, [2])).rejects.toThrow(/Input cells uses invalid lock script!/)
     })
 
 })
