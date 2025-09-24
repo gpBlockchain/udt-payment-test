@@ -22,6 +22,10 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+        
+    - name: Install pnpm
+      run: npm install -g pnpm
+      
     - name: build and start service
       run: |
         bash prepare.sh
